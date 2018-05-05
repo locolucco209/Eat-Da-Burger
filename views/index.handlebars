@@ -1,0 +1,66 @@
+<div class="container">
+
+    <div class="row backCover">
+        <div class="col-sm-6">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">BURGER ID</th>
+                        <th scope="col">BURGER Name</th>
+                        <th scope="col">DEVOURED</th>
+                    </tr>
+                </thead>
+                <thead>
+                    {{#each burgers}}
+                        {{#unless this.devoured}}
+                        <tr>
+                            <td>{{this.id}}</td>
+                            <td> {{this.burger_name}}</td>
+                            <td>
+                                <form action="/api/burgers/{{this.id}}?_method=PUT" method="POST">
+                                    <input type="hidden" name="burgerName" value="true">
+                                    <button class="btn btn-dark" type="submit">Devour it!</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {{/unless}}
+                    {{/each}}
+                </thead>
+            </table>
+        </div>
+
+        <div class="col-sm-6">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">BURGER ID</th>
+                        <th scope="col">BURGER Name</th>
+                        <th scope="col">DEVOURED</th>
+                    </tr>
+                </thead>
+                <thead>
+                    {{#each burgers}}
+                        {{#if this.devoured}}
+                        <tr>
+                            <td>{{this.id}}</td>
+                            <td> {{this.burger_name}}</td>
+                        </tr>
+                        {{/if}}
+                    {{/each}}
+                </thead>
+            </table>
+        </div>
+
+    </div>
+
+    {{!-- Add Burger Form --}}
+    <div class="col-sm-5 text-center">
+        <h3>Add Burger</h3>
+        <form action="/api/burgers" method="POST">
+            <label for="burgerBox">Burger Name:</label>
+            <input type="text" id="burgerBox" name="add_burger">
+            <button type="submit" class="btn btn-success btn-sm">Add</button>
+        </form>
+    </div>
+
+</div>

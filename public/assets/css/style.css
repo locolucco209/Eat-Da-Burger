@@ -1,0 +1,44 @@
+body {
+	background-image: url("../images/background.jpg");
+	background-size: cover;
+
+}
+
+.jumbo {
+	margin-top:25px;
+    background-image: url("../images/jumb.jpg");
+	background-size: cover;
+	border-radius: 10px;
+}
+
+* {
+	font-family: 'Lobster', cursive;
+	color:white;
+}
+
+img{
+	border-radius: 20px;
+}
+
+.backCover{
+	border:1px solid#800000;
+	background-color:#800000;
+	border-radius: 10px;
+}
+.table{
+	margin-top: 20px;
+}
+
+#burgerBox{
+	border-radius: 10px;
+}
+
+.footer {
+	margin-top: 30px;
+	height: 75px;
+    position: bottom;
+	background-color: rgb(255, 165, 0);
+    color:#343a40;
+    text-align: center;
+	padding:25px;
+}
