@@ -12,7 +12,7 @@ app.use(express.static(process.cwd() + "/public"));
 
 // parse application/json
 
-// app.use(bodyParser.json());
+app.use(bodyParser.json());
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
